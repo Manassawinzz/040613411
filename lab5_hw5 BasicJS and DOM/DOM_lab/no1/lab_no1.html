@@ -1,0 +1,31 @@
+<html>
+<head>
+    <script>
+        function changeColor(elementId){
+            var inputElement = document.getElementById(elementId);
+            inputElement.style.color = "green";
+        }
+        function checkPassword() {
+            var pass1 = document.getElementById("pass1").value;
+            var pass2 = document.getElementById("pass2").value;
+        
+            if (pass1 === pass2) {
+                let result1 = document.getElementById("errormsg");
+                result1.innerHTML="correct";
+            } else {
+                let result2 = document.getElementById("errormsg");
+                result2.innerHTML="incorrect";
+            }
+        }
+        </script>
+        
+</head>
+<body>
+<h1>Register</h1>
+Username: <input type="text" id="username" onblur="changeColor('username')"><br>
+Password: <input type="text" id="pass1"  onblur="changeColor('pass1')"><br>
+Re-type Password: <input type="text" id="pass2" onblur="changeColor('pass2')" ><br>
+<input type="submit" onclick="checkPassword()">
+<div id="errormsg"></div>
+</body>
+</html>
